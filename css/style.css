@@ -1,0 +1,19 @@
+.container {
+    min-height: 580px;
+    background-color: #E7EAED;
+}
+
+.login-area {
+    padding: 50px;
+}
+
+#binaryArea,
+#octalArea,
+#hexaArea {
+    visibility: hidden;
+}
+
+#inputValue {
+    font-size: 23px;
+    color: green;
+}

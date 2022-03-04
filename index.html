@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="images/">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/navbar-fixed.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Decimal To Binary / Octal / Hexa Decimal</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="login-area">
+            <h1 class="text-center text-info">Decimal To Binary / Octal / Hexa Decimal</h1><br>
+            <input type="number" id="inputValue" class="form-control"><br>
+            <h3 class="text-success">Binary: <span id="binaryArea">115</span></h3><br>
+            <h3 class="text-success">Octal : <span id="octalArea">110</span></h3><br>
+            <h3 class="text-success">Hexa Decimal: <span id="hexaArea">112</span></h3><br>
+            <button id="submitBtn" class="btn btn-primary btn-block btn-lg">Convert</button>
+
+        </div>
+
+        <footer>
+            <p class="text-center lead">Copyright © TAREQ 2022 Verson : 2.0</p>
+        </footer>
+    </div>
+
+
+
+
+
+    <!-- JS File -->
+
+    <script>
+        const binaryArea = document.getElementById('binaryArea');
+        const octalArea = document.getElementById('octalArea');
+        const hexaArea = document.getElementById('hexaArea');
+
+        // Button
+
+        const submitBtn = document.getElementById('submitBtn');
+
+
+        function binaryOctalHexaConverter() {
+            let num = document.getElementById('inputValue').value;
+
+            if (num === '') {
+                alert('Please Enter a Number !');
+            } else if (num < 0) {
+                alert('Number must be Positive !');
+            } else {
+                binaryArea.style.visibility = 'visible';
+                octalArea.style.visibility = 'visible';
+                hexaArea.style.visibility = 'visible';
+            }
+
+            // Convert Binary
+
+            let binaryresult = Number(num).toString(2)
+            binaryArea.innerText = binaryresult;
+
+            // // Convert Octal
+
+            let octalResult = Number(num).toString(8)
+            octalArea.innerText = octalResult;
+
+            // Convert Hexa Decimal
+
+            let hexaResult = Number(num).toString(16)
+            hexaArea.innerText = hexaResult;
+
+
+        }
+
+        submitBtn.addEventListener('click', binaryOctalHexaConverter)
+    </script>
+
+
+</body>
+
+</html>
